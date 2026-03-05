@@ -101,9 +101,9 @@
         </div>
     </div>
 
-    <!-- Страница с вирусами -->
+    <!-- Страница с оригинальными вирусами -->
     <div id="virusesPage" style="display: none; width: 100%;">
-        <h1>Вирусы Ебыля</h1>
+        <h1>Вирусы Ебыля (оригинальные)</h1>
         
         <div class="virus-grid">
             <button class="virus-btn" onclick="downloadVirus('ebyl1')">Ебыль часть 1</button>
@@ -126,9 +126,28 @@
             <button class="virus-btn" onclick="downloadVirus('myhorrorebyl2')">My horror ЕБЫЛЬ 2</button>
         </div>
 
+        <div style="margin: 20px auto; text-align: center;">
+            <button class="virus-btn" onclick="goToNonOriginalViruses()" style="background-color: #9C27B0; width: 80%; max-width: 300px;">Перейти к не оригинальным вирусам</button>
+        </div>
+
         <div class="button-container" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
             <button class="back-button" onclick="goToHataFromViruses()">Назад в хату</button>
-            <button class="back-button" onclick="goToMain()">На главную</button>
+        </div>
+    </div>
+
+    <!-- Страница с не оригинальными вирусами -->
+    <div id="nonOriginalVirusesPage" style="display: none; width: 100%;">
+        <h1>Вирусы Ебыля (не оригинальные)</h1>
+        
+        <div class="virus-grid">
+            <button class="virus-btn" onclick="downloadVirus('moyhorrorebyl')">Мой хоррор ебыль</button>
+            <button class="virus-btn" onclick="downloadVirus('ebyltiktotakoy')">Ебыль: Ты кто такой</button>
+            <button class="virus-btn" onclick="downloadVirus('ebyl1488')">Ебыль 1488</button>
+        </div>
+
+        <div class="button-container" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+            <button class="back-button" onclick="goToHataFromNonOriginal()">Назад в хату</button>
+            <button class="back-button" onclick="goToVirusesFromNonOriginal()">Назад к оригинальным вирусам</button>
         </div>
     </div>
 
@@ -143,6 +162,7 @@
         function goToMain() {
             document.getElementById('hataPage').style.display = 'none';
             document.getElementById('virusesPage').style.display = 'none';
+            document.getElementById('nonOriginalVirusesPage').style.display = 'none';
             document.getElementById('mainPage').style.display = 'flex';
             document.getElementById('mainPage').style.flexDirection = 'column';
             document.getElementById('mainPage').style.minHeight = '100vh';
@@ -150,12 +170,36 @@
         
         function goToViruses() {
             document.getElementById('hataPage').style.display = 'none';
+            document.getElementById('nonOriginalVirusesPage').style.display = 'none';
             document.getElementById('virusesPage').style.display = 'flex';
             document.getElementById('virusesPage').style.flexDirection = 'column';
             document.getElementById('virusesPage').style.minHeight = '100vh';
         }
         
         function goToHataFromViruses() {
+            document.getElementById('virusesPage').style.display = 'none';
+            document.getElementById('nonOriginalVirusesPage').style.display = 'none';
+            document.getElementById('hataPage').style.display = 'flex';
+            document.getElementById('hataPage').style.flexDirection = 'column';
+            document.getElementById('hataPage').style.minHeight = '100vh';
+        }
+        
+        function goToNonOriginalViruses() {
+            document.getElementById('virusesPage').style.display = 'none';
+            document.getElementById('nonOriginalVirusesPage').style.display = 'flex';
+            document.getElementById('nonOriginalVirusesPage').style.flexDirection = 'column';
+            document.getElementById('nonOriginalVirusesPage').style.minHeight = '100vh';
+        }
+        
+        function goToVirusesFromNonOriginal() {
+            document.getElementById('nonOriginalVirusesPage').style.display = 'none';
+            document.getElementById('virusesPage').style.display = 'flex';
+            document.getElementById('virusesPage').style.flexDirection = 'column';
+            document.getElementById('virusesPage').style.minHeight = '100vh';
+        }
+        
+        function goToHataFromNonOriginal() {
+            document.getElementById('nonOriginalVirusesPage').style.display = 'none';
             document.getElementById('virusesPage').style.display = 'none';
             document.getElementById('hataPage').style.display = 'flex';
             document.getElementById('hataPage').style.flexDirection = 'column';
@@ -174,4 +218,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
